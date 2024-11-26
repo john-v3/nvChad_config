@@ -24,9 +24,9 @@ end
 -- }
 
 
+
 lspconfig.powershell_es.setup {
-  bundle_path = 'C:/Users/user2/AppData/Local/nvim-data/mason/packages/powershell-editor-services/PowerShellEditorServices',
   shell = 'pwsh',
-  cmd = {'pwsh', '-NoLogo', '-NoProfile', '-Command', 'C:/Users/user2/AppData/Local/nvim-data/mason/packages/powershell-editor-services/PowerShellEditorServices/Start-EditorServices.ps1'}
+  cmd = {'pwsh', '-NoLogo', '-NoProfile', '-Command', '~/AppData/Local/nvim-data/mason/packages/powershell-editor-services/PowerShellEditorServices/Start-EditorServices.ps1'}
 }
 
