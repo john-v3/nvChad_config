@@ -37,6 +37,8 @@ return {
     end,
   },
 
+  { "OmniSharp/omnisharp-vim", lazy = false },
+
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",
   -- 	opts = {
