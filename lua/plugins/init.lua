@@ -33,7 +33,7 @@ return {
       -- Example mapping to toggle outline
       require("outline").setup {}
     end,
-    cmd = { "Outline"},
+    cmd = { "Outline" },
   },
 
   -- {
