@@ -14,18 +14,6 @@ return {
   },
 
   {
-    "hedyhli/outline.nvim",
-    config = function()
-      -- Example mapping to toggle outline
-      -- vim.keymap.set("n", "<leader>o", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
-
-      require("outline").setup {
-        -- Your setup opts here (leave empty to use defaults)
-      }
-    end,
-  },
-
-  {
     "tanvirtin/vgit.nvim",
     branch = "v1.0.x",
     -- or               , tag = 'v1.0.2',
@@ -38,6 +26,15 @@ return {
   },
 
   { "OmniSharp/omnisharp-vim", lazy = false },
+
+  {
+    "hedyhli/outline.nvim",
+    config = function()
+      -- Example mapping to toggle outline
+      require("outline").setup {}
+    end,
+    cmd = { "Outline"},
+  },
 
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",

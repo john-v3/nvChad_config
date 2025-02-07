@@ -5,7 +5,7 @@ require "nvchad.mappings"
 local map = vim.keymap.set
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
-map("i", "jk", "<ESC>")
+-- map("i", "jk", "<ESC>")
 
 map("n", "<C-t>", function()
   require("nvchad.themes").open()
@@ -24,5 +24,9 @@ end, { desc = "View project commit history" })
 map({ "n" }, "<leader>gbh", function()
   require("vgit").buffer_history_preview()
 end, { desc = "View history of current buffer" })
+
+map({ "n" }, "<leader>o", "<cmd>Outline<CR>", { desc = "view outline of current buffer" })
+
+-- vim.keymap.set("n", "<leader>o", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
