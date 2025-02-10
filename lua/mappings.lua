@@ -27,8 +27,9 @@ end, { desc = "View history of current buffer" })
 
 map({ "n" }, "<leader>o", "<cmd>Outline<CR>", { desc = "view outline of current buffer" })
 
-
 map({ "n" }, "<leader>ft", "<cmd>OmniSharpFindType<CR>", { desc = "Find Type" })
+
+map({ "n" }, "<leader>fr", "<cmd>Telescope resume<CR>", { desc = "Find Type" })
 
 
 -- vim.keymap.set("n", "<leader>o", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
