@@ -43,7 +43,7 @@ return {
     opts = {},
   },
 
-  { import = "nvchad.blink.lazyspec" },
+  -- { import = "nvchad.blink.lazyspec" },
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",
   -- 	opts = {
