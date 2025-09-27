@@ -31,7 +31,6 @@ return {
   {
     "hedyhli/outline.nvim",
     config = function()
-      -- Example mapping to toggle outline
       require("outline").setup {}
     end,
     cmd = { "Outline" },
