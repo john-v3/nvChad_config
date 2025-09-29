@@ -41,6 +41,7 @@ return {
         "compiler",
         "bugreport",
         "ftplugin",
+        "folke/neodev.nvim",
       },
     },
   },

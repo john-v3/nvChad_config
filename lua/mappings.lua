@@ -51,6 +51,17 @@ map({ "c" }, "<c-s>", function()
   require("flash").toggle()
 end, { desc = "Toggle Flash Search" })
 
+
+-- debug
+map({ "n"}, "<leader>db", function()
+  require("dapui").open()
+end, { desc = "Open Debugger" })
+
+map({ "n"}, "<leader>de", function()
+  require("dapui").close()
+end, { desc = "Close Debugger" })
+
+
 -- vim.keymap.set("n", "<leader>o", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
