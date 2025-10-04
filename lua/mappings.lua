@@ -51,17 +51,18 @@ map({ "c" }, "<c-s>", function()
   require("flash").toggle()
 end, { desc = "Toggle Flash Search" })
 
-
 -- debug
-map({ "n"}, "<leader>db", function()
-  require("dapui").open()
-end, { desc = "Open Debugger" })
+map({ "n" }, "<leader>db", function()
+  require("dapui").toggle()
+end, { desc = "toggle debug ui" })
 
-map({ "n"}, "<leader>de", function()
-  require("dapui").close()
-end, { desc = "Close Debugger" })
+map({ "n" }, "<leader>dc", "<cmd>DapContinue<CR>", { desc = "terminate debug" })
+map({ "n" }, "<leader>tr", "<cmd>DapTerminate<CR>", { desc = "terminate debug" })
+map({ "n" }, "<leader>tb", "<cmd>DapToggleBreakpoint<CR>", { desc = "breakpoint" })
 
-
--- vim.keymap.set("n", "<leader>o", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
+map({ "n" }, "<leader>dj", "<cmd>DapContinue<CR>", { desc = "step into" })
+map({ "n" }, "<leader>dl", "<cmd>DapContinue<CR>", { desc = "step over" })
+map({ "n" }, "<leader>dk", "<cmd>DapContinue<CR>", { desc = "step out" })
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+
