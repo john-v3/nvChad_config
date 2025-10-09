@@ -28,16 +28,16 @@ return {
 
   {
     "mfussenegger/nvim-dap",
-    cmd= function ()
+    cmd = function()
       require "configs.dap"
-    end
+    end,
   },
 
   {
     "rcarriga/nvim-dap-ui",
     dependencies = {
       "mfussenegger/nvim-dap",
-      "nvim-neotest/nvim-nio"
+      "nvim-neotest/nvim-nio",
     },
     lazy = true,
     event = "VeryLazy",
@@ -77,6 +77,8 @@ return {
         group_index = 0, -- set group index to 0 to skip loading LuaLS completions
       })
     end,
+    lazy = true,
+    event = "VeryLazy",
   },
   { -- optional blink completion source for require statements and module annotations
     "saghen/blink.cmp",
@@ -94,7 +96,7 @@ return {
         },
       },
     },
-  }
+  },
 
   -- { import = "nvchad.blink.lazyspec" },
   -- {
