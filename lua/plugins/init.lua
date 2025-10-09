@@ -98,6 +98,18 @@ return {
     },
   },
 
+  {
+    "nvim-telescope/telescope.nvim",
+    config = function()
+      require("telescope").setup {
+        defaults = {
+          layout_strategy = "vertical",
+          layout_config = { height = 0.95, width = 0.85 },
+        },
+      }
+    end,
+  },
+
   -- { import = "nvchad.blink.lazyspec" },
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",
