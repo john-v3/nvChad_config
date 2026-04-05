@@ -31,6 +31,13 @@ return {
     cmd = function()
       require "configs.dap"
     end,
+    event = "VeryLazy",
+    dependencies = {
+      "rcarriga/nvim-dap-ui",
+      "nvim-neotest/nvim-nio",
+      "jay-babu/mason-nvim-dap.nvim",
+      "theHamsta/nvim-dap-virtual-text",
+    },
   },
 
   {
@@ -107,6 +114,14 @@ return {
           layout_config = { height = 0.95, width = 0.85 },
         },
       }
+    end,
+  },
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    cmd = function()
+      require "configs.harpoon"
     end,
   },
 
