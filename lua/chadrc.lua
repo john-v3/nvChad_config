@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-  theme = "onenord",
+  theme = "everblush",
   transparency = true,
 
   hl_override = {
@@ -16,6 +16,22 @@ M.base46 = {
   integrations = { "dap", "hop" },
 }
 
-M.mason = { pkgs = { "revive", "docker-language-server", "go-debug-adapter", "json-lsp", "lua-language-server", "markuplint", "omnisharp", "rust-analyzer" }, Skip = { }, }
+M.mason = {
+  pkgs = {
+    "revive",
+    "docker-language-server",
+    "go-debug-adapter",
+    "json-lsp",
+    "lua-language-server",
+    "markuplint",
+    "omnisharp",
+    "rust-analyzer",
+    "json-lsp",
+    "xmlformatter",
+    "angular-language-server",
+    "typescript-language-server",
+  },
+  Skip = {},
+}
 
 return M
