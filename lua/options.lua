@@ -15,5 +15,7 @@ else
   o.shell = "bash"
 end
 
+vim.o.relativenumber = true
+
 o.scrolloff = 10
 
