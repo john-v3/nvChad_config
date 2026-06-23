@@ -82,3 +82,6 @@ vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:lis
 vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end)
 vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)
 
+-- Neogit
+map({ "n" }, "<leader>gg", "<cmd>Neogit<cr>", { desc = "Show Neogit UI" })
+
