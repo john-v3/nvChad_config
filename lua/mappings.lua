@@ -4,6 +4,54 @@ require "nvchad.mappings"
 
 local map = vim.keymap.set
 
+local function fold_go_error_blocks()
+  local parser = vim.treesitter.get_parser(0, "go")
+  if not parser then
+    return
+  end
+
+  local tree = parser:parse()[1]
+  local root = tree:root()
+  local folds = {}
+
+  local function walk(node)
+    if node:type() == "if_statement" then
+      local text = vim.treesitter.get_node_text(node, 0)
+
+      -- Match:
+      -- if err != nil {
+      --     ...
+      -- }
+      if text:match("^if%s+err%s*!=%s*nil%s*{") then
+        local start_row, _, end_row, _ = node:range()
+
+        table.insert(folds, {
+          start_row + 1,
+          end_row,
+        })
+      end
+    end
+
+    for child in node:iter_children() do
+      walk(child)
+    end
+  end
+
+  walk(root)
+
+  vim.cmd("set foldmethod=manual")
+
+  for _, fold in ipairs(folds) do
+    vim.cmd(string.format("%d,%dfold", fold[1], fold[2]))
+  end
+end
+
+vim.api.nvim_create_user_command(
+  "FoldGoErrors",
+  fold_go_error_blocks,
+  {}
+)
+
 map("n", ";", ":", { desc = "CMD enter command mode" })
 -- map("i", "jk", "<ESC>")
 
@@ -88,4 +136,7 @@ map({ "n" }, "<leader>gg", "<cmd>Neogit<cr>", { desc = "Show Neogit UI" })
 -- folding
 map("n", "zj", "$zf%", { desc = "Fold current function/block" })
 
+
+-- deleting
+map("n", "<leader>ca", "<cmd>:%bd|e#<cr>", { desc = "close all buffers cept for current one" })
 
