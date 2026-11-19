@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-  theme = "everblush",
+  theme = "omarchy", -- follows the Omarchy theme (lua/themes/omarchy.lua)
   transparency = true,
 
   hl_override = {

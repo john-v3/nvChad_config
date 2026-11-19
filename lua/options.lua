@@ -12,7 +12,7 @@ if os_name == "Windows_NT" then
   o.shellpipe = '2>&1 | %%{ "$_" } | tee %s; exit $LastExitCode'
   o.shellquote = '"'
 else
-  o.shell = "bash"
+  o.shell = "nu"
 end
 
 vim.o.relativenumber = true

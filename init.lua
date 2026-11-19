@@ -25,12 +25,14 @@ require("lazy").setup({
   { import = "plugins" },
 }, lazy_config)
 
--- load theme
+-- load theme (recompile first if the Omarchy theme changed since last run)
+require("omarchy").sync()
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
 
 require "options"
 require "autocmds"
+require("omarchy").watch()
 
 vim.schedule(function()
   require "mappings"
